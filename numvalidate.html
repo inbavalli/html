@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head><title>form</title>
+<script type="text/javascript">
+function checkUser()
+{
+var un;
+un=document.getElementById('first_name').value;
+if(un=="")
+{
+document.getElementById('user_status').innerHTML="please enter the first_name";
+document.getElementById('first_name').style.border="2px solid #FF0000";
+}
+else
+{
+document.getElementById('user_status').innerHTML="";
+document.getElementById('first_name').style.border="";
+}
+}
+function checkpassword()
+{
+var password;
+password=document.getElementById('password').value;
+if(password=="")
+{
+document.getElementById('password_status').innerHTML="please enter the password";
+document.getElementById('password').style.border="2px solid #FF0000";
+}
+else
+{
+document.getElementById('password_status').innerHTML="";
+document.getElementById('password').style.border="";
+}
+}
+function fnvalidate()
+{
+var un,password;
+un=document.getElementById('first_name').value;
+password=document.getElementById('password').value;
+if(un!="" && password!="")
+{
+alert("Success");
+return true;
+}
+else 
+{
+alert("not success"); 
+return false;
+}
+}
+function checkPhoneNumber(phoneNo) {
+  var phoneRE = /^\d\d\d\d\d\d\d\d\d\d$/; 
+  if (phoneNo.match(phoneRE)) {
+  alert("success");
+    return true; 
+  } else {
+    alert( "The phone number entered is invalid!" );
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+<h1>login</h1>
+<form name="login"method="get">
+<table>
+  <tr>
+  <td>First_name</td>
+  <td>:</td>
+  <td><input type="text" name="first_name"id="first_name" onblur="checkUser();"></td>
+  <td><span id="user_status" style="color:#FF0000;font-weight:400"></span></td>
+  </tr>
+ <tr>
+ <td>password</td>
+ <td>:</td>
+ <td><input type="password" name="password" id="password" onblur="checkpassword();"></td>
+ <td><span id="password_status" style="color:#FF0000;font-weight:400"></span></td>
+ </tr>
+ <tr>
+ <td>mobile</td>
+ <td>:</td>
+ <td><input type="text" name="mobile"  onblur="checkPhoneNumber(this.value);"></td>
+ <td><span id="mobile_status" style="color:#FF0000;font-weight:400"></span></td>
+ </tr>
+ <tr><td><input type="SUBMIT" value="SUBMIT" name="sub" onclick="fnvalidate();"></td></tr>
+</table>
+ </form> 
+</body>
+</html>
