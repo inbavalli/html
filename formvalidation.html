@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><title>form</title>
+<script type="text/javascript">
+function fnValid()
+{
+var un,password;
+un=document.login.firstname.value;
+password=document.login.password.value;
+if(un=="")
+{
+alert("enter the firstname");
+}
+else if(password=="")
+{
+alert("enter the password");
+}
+else
+{
+alert("success");
+}
+}
+</script>
+</head>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form name="login"method="get">
+  First name:<br>
+  <input type="text" name="firstname">
+  <br>
+  password:<br>
+  <input type="password" name="password" id="password"><br></br>
+  <input type="SUBMIT" value="SUBMIT" name="sub" onclick="fnValid();">
+</form> 
+</body>
+</html>
